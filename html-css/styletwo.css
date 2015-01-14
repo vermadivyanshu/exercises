@@ -1,0 +1,42 @@
+.bone{
+	float: left;
+	margin-left:20px;
+	width: 600px;
+	height: 450px;
+	background-color: white;
+}
+form{
+	width:100%;
+	height:100%;
+}
+.list{
+	width:400px;
+}
+.rlabel{
+	text-align: right;
+}
+.referrow{
+	background-color: cyan;
+	text-align: left;
+
+}
+td{
+	padding:10px;
+}
+table{
+	border:0px;
+	width:100%;
+	height:100%;
+}
+#button{
+	float: right;
+}
+.btwo{
+	background-color: white;
+	height:210px;
+	width: 520px;
+	float: right;
+	margin-right: 100px;
+	display: block;
+	margin-bottom: 30px;
+}

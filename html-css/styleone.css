@@ -1,0 +1,80 @@
+.formone{
+	height: 20px;
+	padding:10px;
+	width:90%;
+	background-color:cyan;
+	color:blue;
+	border:1px solid blue;
+	margin: auto;
+
+}
+a{
+	text-decoration:none;
+	text-align:right;
+	float: right;
+	padding-left: 5px;
+}
+#search{
+	float:right;
+}
+.formtwo{
+	height: 40px;
+	padding:10px;
+	width:90%;
+	background-color:cyan;
+	color:blue;
+	border:1px solid blue;
+	margin: auto;
+
+}
+.dates{
+	width: 40%;
+}
+#list{
+	width: 82.5%;
+}
+
+#rowone{
+	text-align:left;
+	background-color: violet;
+	border-bottom:1px;
+
+}
+.cont{
+	padding:20px;
+}
+
+table{
+	margin: auto;
+	width:50%;
+	border-collapse: collapse;
+}
+th{
+	border:1px solid black;
+	padding:8px;
+	text-align: left;
+	background-color: blue;
+
+	
+}
+td{
+	border:1px solid black;
+	padding:5px;
+	
+}
+#onerow{
+	background-color: white;
+}
+#tworow{
+	background-color: cyan;
+}
+#onerow:hover{
+	background-color: yellow;
+}
+#tworow:hover{
+	background-color: yellow;
+}
+#lastrow{
+	text-align: right;
+	background-color: white;
+}
