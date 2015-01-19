@@ -1,0 +1,43 @@
+body{
+	background-color: cyan;
+}
+#cont{
+	background-color: white;
+	border: 1px solid blue;
+	width: 600px;
+	
+	margin: auto;
+
+}
+table, th, td{
+
+	border:2px solid black;
+	border-collapse: collapse;
+	
+
+
+}
+table{
+	
+	position: relative;
+	top: 20px;
+	
+	left:20px;
+}
+td{
+	width:150px;
+
+}
+.text{
+	width:70px;
+}
+.links, .update{
+	display: none;
+}
+.add{
+	position: relative;
+	left: 20px;
+	top: 20px;
+	margin-bottom: 40px;
+
+}

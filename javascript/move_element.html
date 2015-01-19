@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="move_element.css"/>
+	<script type="text/javascript" src="move_element.js">
+	</script>
+</head>
+<body>
+	<div id="area">
+	<div class="listone">
+		<table>
+			<tr>
+				<td id="ind1" onclick="highlight('ind1')" ondblclick="dHighlight('ind1','ind2')">India</td>
+			</tr>
+			<tr>
+				<td id="fra1" onclick="highlight('fra1')" ondblclick="dHighlight('fra1','fra2')">France</td>
+			</tr>
+			<tr>
+				<td id="por1" onclick="highlight('por1')" ondblclick="dHighlight('por1','por2')">Portugal</td>
+			</tr>
+			<tr>
+				<td id="hun1" onclick="highlight('hun1')" ondblclick="dHighlight('hun1','hun2')">Hungary</td>
+			</tr>
+			<tr>
+				<td id="ger1" onclick="highlight('ger1')" ondblclick="dHighlight('ger1','ger2')">Germany</td>
+			</tr>
+			<tr>
+				<td id="egy1" onclick="highlight('egy1')" ondblclick="dHighlight('egy1','egy2')">Egypt</td>
+			</tr>
+			<tr>
+				<td id="aus1" onclick="highlight('aus1')" ondblclick="dHighlight('aus1','aus2')">Australia</td>
+			</tr>
+		</table>
+	</div>
+	<input type="button" value="Add" id="add" onclick="addElement()" />
+	<input type="button" value="Remove" id="remove" onclick="removeElement()"/>
+	<div class="listtwo">
+		<table>
+			<tr>
+				<td  class="item" id="ind2" onclick="highlight('ind2')" ondblclick="dHighlight('ind2','ind1')">India</td>
+			</tr>
+			<tr>
+				<td class="item" id="fra2" onclick="highlight('fra2')" ondblclick="dHighlight('fra2','fra1')">France</td>
+			</tr>
+	
+			<tr>
+				<td class="item" id="hun2" onclick="highlight('hun2')" ondblclick="dHighlight('hun2','hun1')">Hungary</td>
+			</tr>
+			<tr>
+				<td  class="item" id="ger2"  onclick="highlight('ger2')" ondblclick="dHighlight('ger2','ger1')">Germany</td>
+			</tr>
+			<tr>
+				<td class="item" id="eyg2" onclick="highlight('egy2')" ondblclick="dHighlight('egy2','egy1')">Egypt</td>
+			</tr>
+			<tr>
+				<td class="item" id="aus2" onclick="highlight('aus2')" ondblclick="dHighlight('aus2','aus1')">Australia</td>
+			</tr>
+		</table>
+	</div>	
+	</div>
+</body>
+</html>

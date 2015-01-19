@@ -1,0 +1,54 @@
+body{
+	background-color: cyan;
+}
+#area{
+	background-color: white;
+	border: 1px solid blue;
+	width: 600px;
+	height:150px;
+	margin: auto;
+}
+.listone{
+	width:150px;
+	height:80px; 
+	overflow: scroll;
+	overflow-x:hidden;
+	position: relative;
+	top: 20px;
+	left:20px;
+	border:1px solid grey;
+}
+table{
+	border-collapse: collapse;
+	border:0px;
+	width: 140px;
+}
+.item{
+	display:none;
+}
+#add{
+	position: relative;
+	float: right;
+	right: 354px;
+	top: -40px;
+}
+#remove{
+	float: right;
+	position: relative;
+	right: 300px;
+	top:-13px;
+}
+.listtwo{
+	width:150px;
+	height:80px; 
+	overflow: scroll;
+	overflow-x:hidden;
+	position: relative;
+	float: right;
+	top:-62px;
+	right:60px;
+	border:1px solid grey;
+}
+td:hover{
+	background-color: cyan;
+}

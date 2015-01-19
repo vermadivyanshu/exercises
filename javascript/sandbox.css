@@ -1,0 +1,45 @@
+body{
+	background-color:cyan;
+}
+table{
+	background-color:white;
+}
+td{
+	text-align: center;
+	width:90px;
+	height: 55px;
+}
+
+table{
+	border:1px solid black;
+	margin:auto;
+}
+.img{
+	height: 50px;
+	width:50px;
+	position: relative;
+	top:2px;
+	visibility: hidden;
+
+}
+.tile{
+	background-color: white;
+	height: 55px;
+	width: 90px;
+
+
+}
+#stop
+{
+	visibility: hidden;
+}
+#pause
+{
+	visibility: hidden;
+}
+#resume{
+	visibility: hidden;
+}
+#footer{
+	text-align: center;
+}

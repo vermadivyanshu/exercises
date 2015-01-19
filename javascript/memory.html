@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<head>
+	<title>memory game</title>
+	<link rel="stylesheet" type="text/css" href="sandbox.css">
+	<script type="text/javascript">
+	var clicks=0;
+	var tclicks=0;
+	var image1,image2;
+    var totalSeconds = 0;
+    var timmer;
+    var helloworld = function()
+    {
+    	console.log("helloworld");
+    };
+    var stopGame = function()
+    {
+    	clearInterval(timmer);
+    	document.getElementById("minutes").innerHTML=pad(0);
+    	document.getElementById("seconds").innerHTML=pad(0);
+    	document.getElementById("tclicks").innerHTML=0;
+    	document.getElementById("start").style.visibility="visible";
+    	document.getElementById("stop").style.visibility="hidden";
+    	document.getElementById("pause").style.visibility="hidden";
+    	document.getElementById("resume").style.visibility="hidden";
+
+    };
+    var resumeGame = function()
+    {
+    	timmer=setInterval(setTime, 1000);
+
+    	for(var j=0;j<36;j++){
+       		document.getElementById("div"+j).setAttribute("onclick","unHideImage("+j+")");
+       	}
+    };
+        function setTime()
+        {
+            ++totalSeconds;
+            document.getElementById("minutes").innerHTML = pad(totalSeconds%60);
+            document.getElementById("seconds").innerHTML = pad(parseInt(totalSeconds/60));
+        }
+
+        function pad(val)
+        {
+            var valString = val + "";
+            if(valString.length < 2)
+            {
+                return "0" + valString;
+            }
+            else
+            {
+                return valString;
+            }
+        }
+    
+
+	var unHideImage= function(divId)
+	{
+		document.getElementById("cell"+divId).style.visibility="visible";
+		tclicks++;
+		clicks++;
+		document.getElementById('tclicks').innerHTML=tclicks;
+		if(clicks==1)
+		{
+			image1=divId;
+			
+		}
+		else if(clicks==2)
+		{
+			image2=divId;
+			if(!(document.getElementById("cell"+image1).src==document.getElementById("cell"+image2).src))
+			{
+				clicks=0;
+				setTimeout(function(){
+				document.getElementById("cell"+image1).style.visibility="hidden";
+				document.getElementById("cell"+image2).style.visibility="hidden";
+				},200);
+				
+			}
+		}
+
+	};
+	var shuffleArray=function(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+	};
+
+	var loadImages= function()
+	{
+		var num=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+		num= shuffleArray(num);
+
+		var source;
+		for(var i=0;i<18;i++)
+		{
+			document.getElementById('cell'+i).src="images\\image_"+num[i]+".jpg";
+		}
+		num=shuffleArray(num);
+		for(var i=0;i<18;i++)
+		{
+			document.getElementById('cell'+(i+18)).src="images\\image_"+num[i]+".jpg";
+		}
+       	timmer=setInterval(setTime, 1000);
+       	document.getElementById("stop").style.visibility="visible";
+       	document.getElementById("pause").style.visibility="visible";
+       	document.getElementById("start").style.display="none";
+       	console.log('called loadImages()');
+
+       	for(var j=0;j<36;j++){
+       		console.log("addinf fn to div "+j);
+       		document.getElementById('div'+j).setAttribute("onclick", "unHideImage("+ j +")");
+
+       	}
+	};
+	var pauseGame= function()
+	{
+		document.getElementById("resume").style.visibility="visible";
+		clearInterval(timmer);
+		for(var j=0;j<36;j++){
+       		document.getElementById('div'+j).onclick = function(){
+       			
+       		};
+       	}
+
+	};
+	</script>
+</head>
+<body>
+<h3>Welcome to vinsol memory game</h3>
+<p>Please click Start to begin the game</p>
+<br/>
+	<table border="1">
+	
+
+		<tr>
+			<td><div class="tile" id ="div0" ><img src="images\image_0.jpg" id="cell0" class="img" /></div></td>
+			<td><div class="tile" id="div1" ><img src="images\image_0.jpg" id="cell1" class="img" /></div></td>
+			<td><div class="tile" id="div2" ><img src="images\image_0.jpg" class="img" id="cell2"/></div></td>
+			<td><div class="tile" id="div3" ><img src="images\image_1.jpg" class="img" id="cell3"/></div></td>
+			<td><div class="tile" id="div4"><img src="images\image_0.jpg" class="img" id="cell4"/></div></td>
+			<td><div class="tile" id="div5"><img src="images\image_0.jpg" class="img" id="cell5"/></div></td>
+		</tr>
+
+		<tr>
+			<td><div class="tile" id="div6"><img src="images\image_0.jpg" class="img" id="cell6"/></div></td>
+			<td><div class="tile" id="div7"><img src="images\image_0.jpg" class="img" id="cell7"/></div></td>
+			<td><div class="tile" id="div8"><img src="images\image_0.jpg" class="img" id="cell8"/></div></td>
+			<td><div class="tile" id="div9"><img src="images\image_0.jpg" class="img" id="cell9"/></div></td>
+			<td><div class="tile" id="div10"><img src="images\image_0.jpg" class="img" id="cell10"/></div></td>
+			<td><div class="tile" id="div11"><img src="images\image_0.jpg" class="img" id="cell11"/></div></td>
+		</tr>
+
+		<tr>
+			<td><div class="tile" id="div12"><img src="images\image_0.jpg" class="img" id="cell12"/></div></td>
+			<td><div class="tile" id="div13"><img src="images\image_0.jpg" class="img" id="cell13"/></div></td>
+			<td><div class="tile" id="div14"><img src="images\image_0.jpg" class="img" id="cell14"/></div></td>
+			<td><div class="tile" id="div15"><img src="images\image_0.jpg" class="img" id="cell15"/></div></td>
+			<td><div class="tile" id="div16"><img src="images\image_0.jpg" class="img" id="cell16"/></div></td>
+			<td><div class="tile" id="div17"><img src="images\image_0.jpg" class="img" id="cell17"/></div></td>
+		</tr>
+
+		<tr>
+			<td><div class="tile" id="div18"><img src="images\image_0.jpg" class="img" id="cell18"/></div></td>
+			<td><div class="tile" id="div19"><img src="images\image_0.jpg" class="img" id="cell19"/></div></td>
+			<td><div class="tile" id="div20"><img src="images\image_0.jpg" class="img" id="cell20"/></div></td>
+			<td><div class="tile" id="div21"><img src="images\image_0.jpg" class="img" id="cell21"/></div></td>
+			<td><div class="tile" id="div22"><img src="images\image_0.jpg" class="img" id="cell22"/></div></td>
+			<td><div class="tile" id="div23"><img src="images\image_0.jpg" class="img" id="cell23"/></div></td>
+		</tr>
+
+		<tr>
+			<td><div class="tile" id="div24"><img src="images\image_0.jpg" class="img" id="cell24"/></div></td>
+			<td><div class="tile" id="div25"><img src="images\image_0.jpg" class="img" id="cell25"/></div></td>
+			<td><div class="tile" id="div26"><img src="images\image_0.jpg" class="img" id="cell26"/></div></td>
+			<td><div class="tile" id="div27"><img src="images\image_0.jpg" class="img" id="cell27"/></div></td>
+			<td><div class="tile" id="div28"><img src="images\image_0.jpg" class="img" id="cell28"/></div></td>
+			<td><div class="tile" id="div29"><img src="images\image_0.jpg" class="img" id="cell29"/></div></td>
+		</tr>
+
+		<tr>
+			<td><div class="tile" id="div30"><img src="images\image_0.jpg" class="img" id="cell30"/></div></td>
+			<td><div class="tile" id="div31"><img src="images\image_0.jpg" class="img" id="cell31"/></div></td>
+			<td><div class="tile" id="div32"><img src="images\image_0.jpg" class="img" id="cell32"/></div></td>
+			<td><div class="tile" id="div33"><img src="images\image_0.jpg" class="img" id="cell33"/></div></td>
+			<td><div class="tile" id="div34"><img src="images\image_0.jpg" class="img" id="cell34"/></div></td>
+			<td><div class="tile" id="div35"><img src="images\image_0.jpg" class="img" id="cell35"/></div></td>
+		</tr>
+		
+	</table>
+	<br/>
+	<p id="footer">Clicks: <span id="tclicks">0</span> Time:<span id="seconds">00</span>:<span id="minutes">00</span>
+	<input type="button" value="Start" onclick="loadImages()" id="start" /><input  type="button" value="Pause" onclick="pauseGame()" id="pause"><input type="button" value="Stop" onclick="stopGame()" id="stop"><input type="button" value="Resume" onclick="resumeGame()" id="resume">
+	</p>
+</body>
+</html>
