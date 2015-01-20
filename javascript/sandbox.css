@@ -29,6 +29,10 @@ table{
 
 
 }
+.heading
+{
+	background-color: white;
+}
 #stop
 {
 	visibility: hidden;

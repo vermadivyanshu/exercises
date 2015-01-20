@@ -20,23 +20,38 @@ var clicks=0;
     	document.getElementById("pause").style.visibility="hidden";
     	document.getElementById("resume").style.visibility="hidden";
 
+    	for(var i=0;i<36;i++){
+    		document.getElementById("img"+i).style.display="hidden";
+    		document.getElementById("div"+i).setAttribute("onclick"," ");
+    	}
+    	
+
     };
     var resumeGame = function()
     {
     	timmer=setInterval(setTime, 1000);
 
     	for(var j=0;j<36;j++){
-       		document.getElementById("div"+j).setAttribute("onclick","unHideImage("+j+")");
-       	}
+				found=0;
+			for(var p=0;p<open_div.length;p++){
+
+				if(open_div[p]==j)
+					found=1;
+			}
+			if(found!=0)
+			{
+       			document.getElementById('div'+j).setAttribute("onclick", "unHideImage("+ j +")");
+       		}
+    	}
     };
-        function setTime()
+        var setTime = function()
         {
             ++totalSeconds;
             document.getElementById("minutes").innerHTML = pad(totalSeconds%60);
             document.getElementById("seconds").innerHTML = pad(parseInt(totalSeconds/60));
-        }
+        };
 
-        function pad(val)
+        var pad = function(val)
         {
             var valString = val + "";
             if(valString.length < 2)
@@ -47,24 +62,42 @@ var clicks=0;
             {
                 return valString;
             }
-        }
+        };
     
 
 	var unHideImage= function(divId)
 	{
 		document.getElementById("cell"+divId).style.visibility="visible";
+		if(open_div.length == 35){
+			clearInterval(timmer);
+		}
 		tclicks++;
 		clicks++;
-		document.getElementById('tclicks').innerHTML=tclicks;
 		if(clicks==1)
 		{
 			image1=divId;
+			for(var i=0;open_div.length;i++)
+			{
+				if(image==open_div[i])
+				{
+					clicks--;
+					tclicks--;
+				}
+			}
 			
 		}
 		else if(clicks==2)
 		{
 			image2=divId;
-			if(!(document.getElementById("cell"+image1).src==document.getElementById("cell"+image2).src && image1!=image2))
+
+			for(var i=0;i<open_div.length;i++)
+			{
+				if (image2==open_div[i]) {
+					clicks--;
+					tclicks--;
+				};
+			}
+			if((!(document.getElementById("cell"+image1).src==document.getElementById("cell"+image2).src && image1!=image2) && clicks == 2)
 			{
 				clicks=0;
 				
@@ -75,11 +108,12 @@ var clicks=0;
 				},200);
 				
 			}
-			else{
+			else if(clicks == 2){
+					clicks = 0;
 					open_div[open_index] = image2;
-				open_index++;
-				open_div[open_index] = image1;
-				open_index++;
+					open_index++;
+					open_div[open_index] = image1;
+					open_index++;
 
 				document.getElementById("div"+image1).onclick = function(){
 		
@@ -90,6 +124,7 @@ var clicks=0;
 				};
 			}
 		}
+		document.getElementById('tclicks').innerHTML=tclicks;
 
 	};
 	var shuffleArray=function(array) {
@@ -133,17 +168,9 @@ var clicks=0;
 	{
 		document.getElementById("resume").style.visibility="visible";
 		clearInterval(timmer);
-		for(var j=0;j<36;j++){
-				found=0;
-			for(var p=0;p<open_div.length;p++){
 
-				if(open_div[p]==j)
-					found=1;
-			}
-			if(found!=0)
-			{
-       			document.getElementById('div'+j).setAttribute("onclick", "unHideImage("+ j +")");
-       		}
+		for(var j=0;j<36;j++){
+       		document.getElementById("div"+j).setAttribute("onclick"," ");
     	}
 
 	};
