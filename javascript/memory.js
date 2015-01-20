@@ -3,6 +3,8 @@ var clicks=0;
 	var image1,image2;
     var totalSeconds = 0;
     var timmer;
+    var open_div = [];
+    var open_index = 0;
     var helloworld = function()
     {
     	console.log("helloworld");
@@ -62,14 +64,30 @@ var clicks=0;
 		else if(clicks==2)
 		{
 			image2=divId;
-			if(!(document.getElementById("cell"+image1).src==document.getElementById("cell"+image2).src))
+			if(!(document.getElementById("cell"+image1).src==document.getElementById("cell"+image2).src && image1!=image2))
 			{
 				clicks=0;
+				
+
 				setTimeout(function(){
 				document.getElementById("cell"+image1).style.visibility="hidden";
 				document.getElementById("cell"+image2).style.visibility="hidden";
 				},200);
 				
+			}
+			else{
+					open_div[open_index] = image2;
+				open_index++;
+				open_div[open_index] = image1;
+				open_index++;
+
+				document.getElementById("div"+image1).onclick = function(){
+		
+				};
+				document.getElementById("div"+image2).onclick = function(){
+					
+
+				};
 			}
 		}
 
@@ -116,9 +134,16 @@ var clicks=0;
 		document.getElementById("resume").style.visibility="visible";
 		clearInterval(timmer);
 		for(var j=0;j<36;j++){
-       		document.getElementById('div'+j).onclick = function(){
-       			
-       		};
-       	}
+				found=0;
+			for(var p=0;p<open_div.length;p++){
+
+				if(open_div[p]==j)
+					found=1;
+			}
+			if(found!=0)
+			{
+       			document.getElementById('div'+j).setAttribute("onclick", "unHideImage("+ j +")");
+       		}
+    	}
 
 	};

@@ -11,41 +11,42 @@
 	{
 		rowCount++;
 		rows++;
+		var t_rowid=rowCount;
 		var table = document.getElementById('myTable');
 		var row = table.insertRow(rows);
 		row.id=rowCount;
 		var cell1 = row.insertCell(0);
-		cell1.id = 'cell1' + rowCount;
+		cell1.id = 'cell1' + t_rowid;
 		var cell2 = row.insertCell(1);
-		cell2.id = 'cell2' + rowCount;
+		cell2.id = 'cell2' + t_rowid;
 		var cell3 = row.insertCell(2);
-		cell3.id = 'cell3' + rowCount;
+		cell3.id = 'cell3' + t_rowid;
 
 		var element1 = document.createElement('input');
 		element1.type = 'text';
-		element1.id = 'name'+rowCount;
+		element1.id = 'name'+t_rowid;
 		cell1.appendChild(element1);
 
 		var element2 = document.createElement('input');
 		element2.type = 'text';
-		element2.id = 'email'+rowCount;
+		element2.id = 'email'+t_rowid;
 		cell2.appendChild(element2);
 
 		var element3 = document.createElement('input');
 		element3.type = "button";
 		element3.class = "save";
-		element3.id = "save"+rowCount;
+		element3.id = "save"+t_rowid;
 		element3.value = "Save";
-		element3.setAttribute("onclick","saveRow("+rowCount+")");
+		element3.setAttribute("onclick","saveRow("+t_rowid+")");
 		cell3.appendChild(element3);
 
 		var link1 = document.createElement('a');
 		link1.href = "#";
-		link1.id = "link1"+rowCount;
+		link1.id = "link1"+t_rowid;
 		link1.style.display = "none";
 		link1.innerHTML = "Edit";
 		link1.onclick = function(){
-			editRow(rowCount);
+			editRow(t_rowid);
 		};
 		cell3.appendChild(link1);
 
@@ -55,7 +56,7 @@
 		link2.style.display = "none";
 		link2.innerHTML = "/Delete";
 		link2.onclick = function(){
-			deleteRowfromTable(rowCount);
+			deleteRowfromTable(t_rowid);
 		};
 		cell3.appendChild(link2);
 
@@ -65,13 +66,13 @@
 		element4.value = "Update";
 		element4.style.display= "none";
 		element4.onclick = function(){
-			updateRow(rowCount);
+			updateRow(t_rowid);
 		};
 		element4.class = "update";
 		cell3.appendChild(element4);
 
 		document.getElementById('addButton').style.top = "20px";
-		console.log("row created "+rowCount);
+		console.log("row created "+t_rowid);
 
 	};
 	
@@ -101,6 +102,7 @@
 	};
 	var editRow = function(rowId)
 	{
+		rowId = String(rowId);
 		var name = document.getElementById('cell1'+ rowId).innerHTML;
 		var email = document.getElementById('cell2'+ rowId).innerHTML;
 
@@ -122,11 +124,12 @@
 
 		document.getElementById('link1'+rowId).style.display = "none";
 		document.getElementById('link2'+rowId).style.display = "none";
-		document.getElementById('update' + rowId).style.display = "block"
+		document.getElementById('update' + rowId).style.display = "block";
 
 	};
 	var updateRow = function(rowId){
 		
+		rowId = String(rowId);
 		var name = document.getElementById('name' + rowId);
 		var email = document.getElementById('email' + rowId);
 		var nameText = name.value;
