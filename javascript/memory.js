@@ -24,7 +24,13 @@ var clicks=0;
     		document.getElementById("img"+i).style.display="hidden";
     		document.getElementById("div"+i).setAttribute("onclick"," ");
     	}
-    	
+    	if(open_div.length==36)
+    	{
+    		alert("Total Clicks" + tclicks);
+    	}
+    	else{
+    		alert("Game not Complete! You have to Start Again.")
+    	}
 
     };
     var resumeGame = function()
@@ -68,9 +74,6 @@ var clicks=0;
 	var unHideImage= function(divId)
 	{
 		document.getElementById("cell"+divId).style.visibility="visible";
-		if(open_div.length == 35){
-			clearInterval(timmer);
-		}
 		tclicks++;
 		clicks++;
 		if(clicks==1)
@@ -97,7 +100,7 @@ var clicks=0;
 					tclicks--;
 				};
 			}
-			if((!(document.getElementById("cell"+image1).src==document.getElementById("cell"+image2).src && image1!=image2) && clicks == 2)
+			if((!(document.getElementById("cell"+image1).src==document.getElementById("cell"+image2).src && image1!=image2) && clicks == 2))
 			{
 				clicks=0;
 				
@@ -125,6 +128,10 @@ var clicks=0;
 			}
 		}
 		document.getElementById('tclicks').innerHTML=tclicks;
+		if(open_div.length == 36){
+			clearInterval(timmer);
+			alert("Game Over! Total clicks"+ tclicks);
+		}
 
 	};
 	var shuffleArray=function(array) {
