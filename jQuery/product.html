@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="product.css"/>
+		<script type= "text/javascript" src="jquery-2.1.3.js"></script>
+		<script type="text/javascript" src= "product.js"></script>		
+	<head>
+
+	<body>
+		<div class="products">
+			<ul>
+				<li>All Products<input type="checkbox" id="all" name="All products"/></li>
+				<li>Available Products<input type="checkbox" id = "available" name="Available Products"/></li>
+			</ul>
+		</div>
+
+		<div class="brands">
+			<ul class="brandsList">
+				<li>BRAND A<input type="checkbox" value="" id="itemA" /></li>
+				<li>BRAND B<input type="checkbox" value="" id="itemB" /></li>
+				<li>BRAND C<input type="checkbox" value="" id="itemC" /></li>
+				<li>BRAND D<input type="checkbox" value="" id="itemD" /></li>
+			</ul>
+		</div>
+
+		<div class="colorsDiv">
+			<ul class="colors">
+				<li>Yellow<input type="checkbox" value="" id="itemYellow" /></li>
+				<li>Red<input type="checkbox" value="" id="itemRed" /></li>
+				<li>Green<input type="checkbox" value="" id="itemGreen" /></li>
+				<li>Blue<input type="checkbox" value="" id="itemBlue" /></li>
+			</ul>
+		</div>
+
+		<div class="allProducts">
+			<table id="productTable">
+			<tr>
+				<td><div class="yellow" id="cell1">1<p id = "A">BRAND A</p><p class="soldOut">SOLD OUT</p></div></td>
+				<td><div class="red">2 <p id = "B" class="available">BRAND B</p></div></td>
+				<td><div class="green">3 <p id = "D" class="available">BRAND D</p></div></td>
+				<td><div class="red">4 <p id = "A">BRAND A</p><p class="soldOut">SOLD OUT</p></div></td>
+			</tr>
+			<tr>
+				<td><div class="blue">5 <p id = "B" class="available">BRAND B</p></div></td>
+				<td><div class="green">6 <p id = "C" class="available">BRAND C</p> </div></td>
+				<td><div class="red">7 <p id = "C">BRAND C</p><p class="soldOut">SOLD OUT</p></div></td>
+				<td><div class="blue">8 <p id = "D" class="available">BRAND D</p></div></td>
+			</tr>
+			<tr>
+				<td><div class="yellow">9 <p id = "A" class="available">BRAND A</p></div></td>
+				<td><div class="yellow">10 <p id = "B">BRAND B</p><p class="soldOut">SOLD OUT</p></div></td>
+				<td><div class="green">11 <p id = "D" class="available">BRAND D</p></div></td>
+				<td><div class="yellow">12 <p id = "D" class="available">BRAND D</p></div></td>
+			</tr>
+			<tr>
+				<td><div class="blue">13 <p id = "A" class="available">BRAND A</p> </div></td>
+				<td><div class="blue">14 <p id = "D" class="available">BRAND D</p> </div></td>
+				<td><div class="green">15 <p id = "B" class="available">BRAND B</p></div></td>
+				<td><div class="yellow">16 <p id = "B">BRAND B</p><p class="soldOut">SOLD OUT</p></div></td>
+			</tr>
+			<tr>
+				<td><div class="green">17 <p id = "A">BRAND A</p><p class="soldOut">SOLD OUT</p></div></td>
+				<td><div class="blue">18 <p id = "D">BRAND A</p><p class="soldOut">SOLD OUT</p></div></td>
+				<td><div class="green">19 <p id = "C" class="available">BRAND A</p> </div></td>
+				<td><div class="yellow">20 <p id = "A" class="available">BRAND A</p> </div></td>
+			</tr>
+		</div>
+			</table>
+
+	</body>
+</html>

@@ -1,0 +1,59 @@
+
+.red{
+	background-color: red;
+	width: 100px;
+	height: 100px;
+	float: right;;
+	text-align: center;
+	
+}
+.blue{
+	background-color: blue;
+	width: 100px;
+	height: 100px;
+	float:right;
+	text-align: center;
+
+}
+.green{
+	background-color: green;
+	width: 100px;
+	height: 100px;
+	float: right;
+	text-align: center;
+}
+.yellow{
+	background-color: yellow;
+	width: 100px;
+	height: 100px;
+	float: right;
+	text-align: center;
+}
+li{
+	text-decoration: none;
+}
+body{
+	background-color: cyan;
+}
+ul{
+	list-style: none;
+}
+.allProducts{
+	background-color: white;
+	float: right;
+	padding: 20px;
+	position: relative;
+	top: -290px;
+	width: 418px;
+	height: 512px;
+}
+.colorsDiv{
+	position: relative;
+	left: 400px;
+	top: -130px;
+}
+.brands{
+	background-color: white;
+	padding: 20px;
+	width: 200px;
+}

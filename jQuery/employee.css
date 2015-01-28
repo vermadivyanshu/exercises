@@ -1,0 +1,32 @@
+#employeeTable{
+
+	width: 80px;
+	
+}
+#accordion1{
+	width: 90px;
+	border: 1px solid black;
+}
+#accordion2{
+	width: 300px;
+	border: 1px solid black;
+}
+table{
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+h3{
+	border: 1px solid black;
+	margin:0px;
+	width: 90px;
+}
+ul li{
+	margin:0px;
+	padding-left:0px;
+	padding-right: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+#employeeDiv{
+	
+}

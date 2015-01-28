@@ -78,7 +78,6 @@
 	
 	var saveRow = function(rowId)
 	{
-		rowId = String(rowId);
 		console.log(rowId);
 		var cell1 = document.getElementById('cell1'+rowId);
 		var name = document.getElementById('name'+rowId);
