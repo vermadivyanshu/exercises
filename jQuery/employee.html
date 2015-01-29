@@ -7,8 +7,32 @@
 	</head>
 
 	<body>
-		<h3>Roles</h3>
-		<div id="accordion1">
+	<div id="rolesDiv">
+		<h3 id="roles">Roles</h3>
+		<ul class="rolesList">
+			<li>
+				<h3 id="SQL">SQL</h3>
+				<ul id="sqlList">
+				<li></li>
+				</ul>
+			</li>
+
+			<li>
+				<h3 id="RUBY">RUBY</h3>
+				<ul id="rubyList">
+				<li></li>
+				</ul>
+			</li>
+			<li>
+				<h3 id="JQUERY">jQUERY</h3>
+				<ul id="jQueryList">
+				<li></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+		<!--<div id="accordion1">
 			<h3 id="sql">SQL</h3>
 			<div id="sqlDiv">
 				<ul id="sqlList">
@@ -24,42 +48,44 @@
 				<ul id="jQueryList">
 				</ul>
 			</div>
-		</div>
+		</div>-->
 		
 		<div id="employeeDiv">
-			<table  id="employeeTable" border="1">
-				<th>Employees</th>
-				<tr><td>Sandeep</td></tr>
-				<tr><td>Ashutosh</td></tr>
-				<tr><td>Sunil</td></tr>
-				<tr><td>Seema</td></tr>
-				<tr><td>Nadisha</td></tr>
-				<tr><td>Ashish</td></tr>
-				<tr><td>Divyanshu</td></tr>
-				<tr><td>Akhilesh</td></tr>
-			</table>
+			<ul  id="employeeList">
+				<h3>Employees</h3>
+				<li class="employeeItem" id="sandeep">Sandeep</li>
+				<li class="employeeItem" id="ashutosh">Ashutosh</li>
+				<li class="employeeItem" id="sunil">Sunil</li>
+				<li class="employeeItem" id="seema">Seema</li>
+				<li class="employeeItem" id="nadisha">Nadisha</li>
+				<li class="employeeItem" id="ashish">Ashish</li>
+				<li class="employeeItem" id="divyanshu">Divyanshu</li>
+				<li class="employeeItem" id="akhilesh">Akhilesh</li>
+			</ul>
 		</div>
 
-		<h3>ToDos</h3>
-		<div id="accordion2">
+		<div id="ToDos">
+			<h3 id="todo">ToDos</h3>
+			<div id="accordion2">
 			
-			<h3 id="sql">SQL</h3>
-			<div>
-				<table id="sqlTable">
+				<h3 id="sql">SQL</h3>
+				<div>
+					<ul id="sqlTable">
 					
-				</table>
-			</div>
-			<h3 id="ruby">Ruby</h3>
-			<div>
-				<table id="rubyTable">
+					</ul>
+				</div>
+				<h3 id="ruby">Ruby</h3>
+				<div>
+					<ul id="rubyTable">
 					
-				</table>
-			</div>
-			<h3 id="jQuery">jQuery</h3>
-			<div>
-				<table id="jQueryTable">
+					</ul>
+				</div>
+				<h3 id="jQuery">jQuery</h3>
+				<div>
+					<ul id="jQueryTable">
 					
-				</table>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</body>
