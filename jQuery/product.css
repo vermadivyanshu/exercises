@@ -57,3 +57,7 @@ ul{
 	padding: 20px;
 	width: 200px;
 }
+#productTable div{
+	margin: 1px;
+	float: left;
+}
